@@ -86,15 +86,32 @@ nav li a{
 
 }
 
+nav li a:hover{
+    font-weight: bolder;
+    background-color: aliceblue;
+    color: #151513;
+    padding: 10px;
+    font-size: large;
+}
+
 nav li{
 		list-style: none;
 
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+
 .about{
 	display: flex;
 	justify-content: space-evenly;
-/*	margin-top: -200px;*/
+	/* margin-top: -200px; */
 }
 
 .about img{
@@ -224,6 +241,136 @@ nav li{
 .footer-links a {
     font-size: 0.9rem;
 }
+
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+    .heroimage {
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+    }
+    
+    .heroimage img {
+      width: 80%;
+      height: auto;
+      padding: 20px;
+    }
+    
+    .herotext {
+      width: 80%;
+      font-size: 40px;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .about {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .about img {
+      width: 80%;
+    }
+    
+    .abouttext {
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .abouttext p {
+      width: 100%;
+    }
+    
+    .recent {
+      flex-direction: column;
+      height: auto;
+      padding: 40px 0;
+    }
+    
+    .box {
+      margin-bottom: 20px;
+    }
+    
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Mobile Styles (up to 767px) */
+  @media (max-width: 767px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    
+    nav li {
+      margin: 10px 0;
+    }
+    
+    .hamburger {
+      display: block;
+      color: white;
+      margin: 20px auto;
+    text-align: center;
+    }
+    
+    .herotext {
+      font-size: 30px;
+      width: 90%;
+    }
+    
+    .heroimage img {
+      width: 90%;
+    }
+    
+    .about img {
+      width: 90%;
+    }
+    
+    .abouttext {
+      width: 90%;
+    }
+    
+    .recent {
+      background-size: 10%;
+    }
+    
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    
+    /* Hide regular nav on mobile when hamburger is implemented */
+    nav ul {
+      display: none;
+    }
+    
+    /* Show mobile menu when active */
+    nav ul.active {
+      display: flex;
+    }
+    
+    .hire, .Explore {
+      margin: 5px;
+    }
+  }
 
 /* About Page Styles */
 .about-section {
@@ -743,10 +890,12 @@ body {
     z-index: 1000;
 }
 
-.logo {
+.logo a {
     font-size: 30px;
     font-weight: bolder;
     color: white;
+    text-decoration: none;
+
 }
 
 /* Desktop Navigation */
@@ -845,14 +994,16 @@ body {
     border: none;
 }
 
-.hire {
+.hire a{
     background-color: #6099E6;
     color: white;
+    text-decoration: none;
 }
 
-.Explore {
+.Explore a{
     background-color: #6099E6;
     color: white;
+    text-decoration: none;
 }
 
 .hire:hover, .Explore:hover {
@@ -870,6 +1021,29 @@ body {
 .hero-img-container img {
     max-width: 100%;
     height: auto;
+}
+@media (max-width: 768px) {
+    .hamburger{
+        display: block;
+    }
+
+    nav li a{
+        display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: white;
+  width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  list-style: none;
+    }
+
+    .heroimage img
+    {
+        display: none;
+    }
 }
 
 /* About Section */
@@ -899,6 +1073,13 @@ body {
     padding: 20px;
 }
 
+.about-image{
+    display: none;
+}
+
+.about-content{
+    width: 80%;
+}
 .white-text {
     color: white;
 }
